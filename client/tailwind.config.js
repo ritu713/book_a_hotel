@@ -8,8 +8,9 @@ export default {
       padding: {
         md:"10rem"
       }
-    }
-  },
+    },
+    animate: "pulse 5s",
+},
   plugins: [],
 }
 
