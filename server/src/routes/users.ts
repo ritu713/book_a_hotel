@@ -29,10 +29,10 @@ router.post("/register",[
 
         return res.status(200).send({message : "User registered OK"})
     } 
-    catch (error) {
+    catch (error : any) {
         //error logged instead of returned because it could contain sensitive data
         console.log(error)
-        return res.status(500).json({message : "Something went wrong :("})
+        return res.status(500).json({message : "Something went wrong"})
     }
 })
 

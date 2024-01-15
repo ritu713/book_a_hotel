@@ -13,7 +13,7 @@ declare global {
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies["auth_token"]
     if(!token){
-        return res.status(401).json({message : "Unauthorized"})
+        return res.status(401).json({message : "Unauthorized, no cookie found"})
     }
 
     //check with JWT secret key!
@@ -23,7 +23,7 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
         next()
     } 
     catch(error){
-        return res.status(401).json({message : "Unauthorized"})
+        return res.status(401).json({message : "Unauthorized :("})
     }
 }
 
