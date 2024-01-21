@@ -23,7 +23,7 @@ const Login = () => {
         navigate("/")
       },
       onError: (error : Error) => {
-        showToast({message: error.message, type: "SUCCESS"})
+        showToast({message: error.message, type: "ERROR"})
       }
     })
 

@@ -5,8 +5,11 @@ import 'dotenv/config'
 import mongoose from 'mongoose'
 import userRoutes from './routes/users'
 import authRoutes from './routes/auth'
+import hotelRoutes from './routes/my-hotels'
 import cookieParser from 'cookie-parser'
 import path from 'path'
+import { v2 as cloudinary} from 'cloudinary'
+
 
 
 //basic setup
@@ -26,7 +29,14 @@ app.use(express.static(path.join(__dirname, "../../client/dist")));
 //routes
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/my-hotels', hotelRoutes);
 
+//cloudinary v2
+cloudinary.config({
+    cloud_name : process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret : process.env.CLOUDINARY_API_SECRET
+});
 
 //db connection
 mongoose.connect(process.env.MONGO_CONNECTION_STRING as string)
