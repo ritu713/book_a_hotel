@@ -25,6 +25,10 @@ app.use(cors({
 
 //frontend
 app.use(express.static(path.join(__dirname, "../../client/dist")));
+//need to add this separately from static files because conditional logic for some pages like add hotel feature is not present in static files.
+app.get('*', (req : Request, res : Response) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+})
 
 //routes
 app.use('/api/users', userRoutes);
@@ -55,3 +59,4 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING as string)
 app.get('/', (req : Request, res : Response) => {
     return res.send("Home page up and running!")
 });
+
