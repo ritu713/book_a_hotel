@@ -1,5 +1,5 @@
 //fetch requests. separate file to keep code cleaner
-import { HotelFormData } from './forms/ManageHotelForm/ManageHotelForm';
+import {HotelType} from '../../server/src/models/Hotel'
 import { LoginFormData } from './pages/Login'
 import { RegisterFormData } from './pages/Register'
 
@@ -72,4 +72,17 @@ export const addMyHotel = async (hotelFormData : FormData) => {
     }
 
     return response.json()
+}
+
+export const fetchMyHotels = async() : Promise<HotelType[]> => {
+    const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+        method : "GET",
+        credentials: "include"
+    });
+
+    if(!response.ok){
+        throw new Error("Error fetching hotel");
+    }
+
+    return response.json();
 }

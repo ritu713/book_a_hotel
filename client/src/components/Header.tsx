@@ -14,11 +14,21 @@ const Header = () => {
             <Link to="/">Book A Hotel</Link>
         </span>
         <span className='flex space-x-2 items-center'>
+<<<<<<< HEAD
           {isLoggedIn? <>
             <Link className = "flex items-center px-3 font-bold text-white hover:bg-blue-600" to="/my-bookings">My bookings</Link>
             <Link className = "flex items-center px-3 font-bold text-white hover:bg-blue-600" to="/my-hotels">My hotels</Link>
             <SignOutButton />
           </> : <Link to="/login" className='flex items-center text-blue-600 px-3 py-2 bg-white font-bold hover:bg-gray-200 '>Sign in</Link>}
+=======
+          {
+            isLoggedIn? <>
+              <Link className = "flex items-center px-3 font-bold text-white hover:bg-blue-600" to="/my-bookings">My bookings</Link>
+              <Link className = "flex items-center px-3 font-bold text-white hover:bg-blue-600" to="/my-hotels">My hotels</Link>
+              <SignOutButton />
+            </> : <Link to="/login" className='flex items-center text-blue-600 px-3 bg-white font-bold hover:bg-gray-200 '>Sign in</Link>
+          }
+>>>>>>> parent of 343fcd5 (Revert "View my hotels initialised")
             
         </span>
       </div>
