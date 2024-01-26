@@ -1,0 +1,14 @@
+import {Link} from 'react-router-dom'
+const MyHotels = () => {
+  return (
+    <div className="space-y-5">
+        <span>
+            <h1 className="text-3xl font-bold">My Hotels</h1>
+            <Link to="/add-hotel" className="bg-blue-600 flex text-white text-xl font-bold p-2 hover:bg-blue-450">Add Hotel</Link>
+        </span>
+      
+    </div>
+  )
+}
+
+export default MyHotels 
