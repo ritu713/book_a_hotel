@@ -59,13 +59,4 @@ router.post('/', verifyToken,[
     
 })
 
-router.get('/', verifyToken, async (req : Request, res : Response) => {
-    
-    try {
-        const hotels = await Hotel.find({userID : req.userID});
-        return res.json(hotels);
-    } catch (error) {
-        return res.status(500).send({message : "Error fetching hotels"});
-    }
-})
 export default router;
