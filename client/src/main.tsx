@@ -11,7 +11,8 @@ const queryClient = new QueryClient({
       retry: 0
     }
   }
-})
+});
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>

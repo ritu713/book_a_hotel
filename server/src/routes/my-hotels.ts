@@ -15,7 +15,7 @@ const upload = multer({
     },
 })
 
-router.post('/', verifyToken,[
+router.post('/', verifyToken, [
     body("name").notEmpty().withMessage("Name is required"),
     body("city").notEmpty().withMessage("City is required"),
     body("country").notEmpty().withMessage("Country is required"),
