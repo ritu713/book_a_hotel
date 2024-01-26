@@ -12,8 +12,8 @@ const facilities = [
 ];
 
 const FacilitiesSection = () => {
-  const { register, formState : { errors }} = useFormContext<HotelFormData>();
-
+  const { register, watch, formState : { errors }} = useFormContext<HotelFormData>();
+  const typeWatch = watch("facilities");
   return (
     <div>
       <h4 className="text-2xl font-bold mb-3">Facilities</h4>

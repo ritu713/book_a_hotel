@@ -1,5 +1,5 @@
 //fetch requests. separate file to keep code cleaner
-import { HotelType } from '../../server/src/models/Hotel'
+import { HotelFormData } from './forms/ManageHotelForm/ManageHotelForm';
 import { LoginFormData } from './pages/Login'
 import { RegisterFormData } from './pages/Register'
 
