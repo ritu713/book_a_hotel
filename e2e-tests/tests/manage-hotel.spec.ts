@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("heading", {name : "Login"})).toBeVisible();
   //check if we can fill email and password fields
   await page.locator("[name=email]").fill("1@1.com")
-  await page.locator("[name=password]").fill("password123")
+  await page.locator("[name=password]").fill("password")
   //click on login
   await page.getByRole("button", {name: "Login"}).click();
   await expect(page.getByText("Successfully logged in")).toBeVisible();
@@ -30,7 +30,7 @@ test("should allow user to add a hotel", async ({ page }) => {
     await page.getByText("Budget").click();
     await page.getByLabel("Free WiFi").check();
     await page.locator("[name='adultCount']").fill("2")
-    await page.locator("[name='childCount']").fill("2")
+    await page.locator("[name='childCount']").fill("4")
 
     await page.setInputFiles('[name="imageUrls"]', [
       path.join(__dirname, "files", "1.jpg"),
@@ -40,4 +40,20 @@ test("should allow user to add a hotel", async ({ page }) => {
     await page.getByRole("button", {name : "Save"}).click();
     await expect(page.getByText("Hotel successfully added")).toBeVisible();
     
+})
+
+
+//should idealy be better data here!
+test("should allow user to view their hotels", async({page}) => {
+  await page.goto(`${UI_URL}/my-hotels`);
+
+  await expect(page.getByText("abc")).toBeVisible();
+  await expect(page.getByText("c")).toBeVisible();
+  await expect(page.getByText("a, b")).toBeVisible();
+  await expect(page.getByText("Lodge")).toBeVisible();
+  await expect(page.getByText("Rs. 1000 per night")).toBeVisible();
+
+  await expect(page.getByRole("link", {name : "View Details"})).toBeVisible();
+  await expect(page.getByRole("link", {name : "Add Hotel"})).toBeVisible();
+
 })

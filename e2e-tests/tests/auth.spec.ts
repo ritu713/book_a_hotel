@@ -26,7 +26,8 @@ test('should allow user to sign in', async ({ page }) => {
 
 
 test('should allow user to register', async ({page}) => {
-  const testMail = `test_register_${Math.floor(Math.random() * 90000 + 10000)}@test.com`;
+  // const testMail = `test_register_${Math.floor(Math.random() * 90000 + 10000)}@test.com`;
+  const testMail = "1@1.com"
   await page.goto(UI_URL)
 
   //navigate to sign up page

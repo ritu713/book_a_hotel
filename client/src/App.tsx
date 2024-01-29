@@ -21,9 +21,9 @@ function App() {
       {isLoggedIn && <>
         <Route path='/add-hotel' element={<Layout><AddHotel/></Layout>}/>
       </>}
-      {/* {isLoggedIn && <>
+      {isLoggedIn && <>
         <Route path="/my-hotels" element={<Layout><MyHotels/></Layout>}/>
-      </>} */}
+      </>}
       <Route path='*' element={<Navigate to ="/" />} />
       
     </Routes>

@@ -27,7 +27,7 @@ app.use(cors({
 
 //frontend
 app.use(express.static(path.join(__dirname, "../../client/dist")));
-//need to add this separately from static files because conditional logic for some pages like add hotel feature is not present in static files.
+
 
 
 //routes
@@ -35,6 +35,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/my-hotels', hotelRoutes);
 
+//need to add this separately from static files because conditional logic for some pages like add hotel feature is not present in static files.
 app.get('*', (req : Request, res : Response) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 })
