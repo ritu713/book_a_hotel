@@ -10,7 +10,7 @@ test('should allow user to sign in', async ({ page }) => {
   await expect(page.getByRole("heading", {name : "Login"})).toBeVisible();
   //check if we can fill email and password fields
   await page.locator("[name=email]").fill("1@1.com")
-  await page.locator("[name=password]").fill("password123")
+  await page.locator("[name=password]").fill("password")
   //click on login
   await page.getByRole("button", {name: "Login"}).click();
 
@@ -26,8 +26,8 @@ test('should allow user to sign in', async ({ page }) => {
 
 
 test('should allow user to register', async ({page}) => {
-  // const testMail = `test_register_${Math.floor(Math.random() * 90000 + 10000)}@test.com`;
-  const testMail = "1@1.com"
+  const testMail = `test_register_${Math.floor(Math.random() * 90000 + 10000)}@test.com`;
+  // const testMail = "1@1.com"
   await page.goto(UI_URL)
 
   //navigate to sign up page

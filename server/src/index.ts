@@ -29,6 +29,12 @@ app.use(cors({
 app.use(express.static(path.join(__dirname, "../../client/dist")));
 
 
+//cloudinary v2
+cloudinary.config({
+    cloud_name : process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret : process.env.CLOUDINARY_API_SECRET
+});
 
 //routes
 app.use('/api/users', userRoutes);
@@ -40,12 +46,7 @@ app.get('*', (req : Request, res : Response) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 })
 
-//cloudinary v2
-cloudinary.config({
-    cloud_name : process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret : process.env.CLOUDINARY_API_SECRET
-});
+
 
 //db connection
 mongoose.connect(process.env.MONGO_CONNECTION_STRING as string)

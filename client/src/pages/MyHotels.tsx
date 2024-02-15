@@ -12,7 +12,10 @@ const MyHotels = () => {
   })
 
   if(!hotelData){
-    return <span>No hotels found</span>;
+    return <>
+    <span>No hotels found</span>
+      <Link to="/add-hotel" className="bg-blue-600 flex text-white text-xl font-bold p-2 hover:bg-blue-500">Add Hotel</Link>
+    </>;
   }
 
 
