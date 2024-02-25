@@ -42,8 +42,6 @@ test("should allow user to add a hotel", async ({ page }) => {
     
 })
 
-
-//should idealy be better data here!
 test("should allow user to view their hotels", async({page}) => {
   await page.goto(`${UI_URL}/my-hotels`);
 

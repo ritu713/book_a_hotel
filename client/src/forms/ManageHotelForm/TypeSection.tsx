@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-const hotelTypes = [
+export const hotelTypes = [
     "Luxury", "Budget", "Vacation", "Beach side", "City view", "Buisness", "Romantic", "Lodge", "Motel"
 ];
 

@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { HotelFormData } from "./ManageHotelForm";
 
-const facilities = [
+export const facilities = [
     "Free WiFi",
     "Parking",
     "Pool",
