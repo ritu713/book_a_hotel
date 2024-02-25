@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { useSearchContext } from '../contexts/SearchContext'
 import { MdTravelExplore } from 'react-icons/md';
 import DatePicker from 'react-datepicker'
@@ -15,7 +15,6 @@ const SearchBar = () => {
     const [checkOut, setCheckOut] = useState<Date>(search.checkOut);
     const [adultCount, setAdultCount] = useState<number>(search.adultCount);
     const [childCount, setChildCount] = useState<number>(search.childCount);
-    const [hotelID, setHotelID] = useState<string>(search.hotelID);
 
     const handleSave = (event : FormEvent) => {
         event.preventDefault();
