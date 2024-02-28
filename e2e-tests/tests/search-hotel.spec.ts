@@ -27,3 +27,18 @@ test("Should allow hotel search results", async({page}) => {
     await expect(page.getByText("Hotels found in Pune")).toBeVisible();
     await expect(page.getByText("Manali Resort updated")).toBeVisible();
 })
+
+test("should show hotel details", async({page}) => {
+  await page.goto(UI_URL);
+
+  await page.getByPlaceholder("Where are you going?").fill("Pune");
+  await page.getByRole("button", {name : "Search"}).click();
+
+  await page.getByText("Manali Resort updated").click();
+
+  await expect(page).toHaveURL(/details/);
+  await expect(page.getByRole("button", {name : "Book Now"})).toBeVisible();
+
+
+  
+})

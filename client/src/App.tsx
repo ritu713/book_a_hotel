@@ -12,6 +12,7 @@ import MyHotels from './pages/MyHotels'
 import { useAppContext } from "./contexts/AppContext";
 import EditHotel from "./pages/EditHotel";
 import Search from './pages/Search'
+import Details from "./pages/Details";
 
 function App() {
   const {isLoggedIn} = useAppContext();
@@ -19,6 +20,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout children="Home page"/>}/>
       <Route path="/search" element={<Layout><Search/></Layout>}/>
+      <Route path="/details/:hotelID" element={<Layout><Details/></Layout>}/>
       <Route path="/register" element ={<LoginLayout> <Register/> </LoginLayout>}/>
       <Route path="/login" element={<LoginLayout> <Login/> </LoginLayout>} />
       

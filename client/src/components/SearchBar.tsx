@@ -44,7 +44,7 @@ const SearchBar = () => {
           </label>
 
           <label className='flex items-center'>
-            Kids: 
+            Children: 
             <input type='number' className='flex font-bold p-1 focus:outline-none' min={0} max={10}
             value={childCount}
             onChange={(e) => setChildCount(parseInt(e.target.value))}/>
