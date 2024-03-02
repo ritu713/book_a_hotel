@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 export type UserType = {
     _id : string,
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
 });
 
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next : any) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 8);
   }
