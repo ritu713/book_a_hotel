@@ -37,8 +37,5 @@ test("should show hotel details", async({page}) => {
   await page.getByText("Manali Resort updated").click();
 
   await expect(page).toHaveURL(/details/);
-  await expect(page.getByRole("button", {name : "Book Now"})).toBeVisible();
-
-
-  
+  await expect(page.getByRole("button", {name : "Book Now"})).toBeVisible();  
 })

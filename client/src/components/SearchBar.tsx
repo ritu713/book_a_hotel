@@ -63,7 +63,7 @@ const SearchBar = () => {
           <DatePicker selected={checkOut} onChange={(date) => setCheckOut(date as Date)}
           selectsEnd startDate={checkIn} endDate={checkOut}
           minDate={minDate} maxDate={maxDate}
-          placeholderText='Check-in date'
+          placeholderText='Check-out date'
           className='min-w-full focus:outline-none bg-white p-2 '/>
         </div>
 
@@ -72,7 +72,8 @@ const SearchBar = () => {
           onClick = {handleSave}>
             Search
           </button>
-          <button className='w-1/3 border border-2 border-red-600 bg-white text-red-600 font-bold h-full text-xl p-2 hover:bg-red-400'>
+          <button className='w-1/3 border border-2 border-red-600 bg-white text-red-600 font-bold h-full text-xl p-2 hover:bg-red-400'
+          onClick={() => sessionStorage.clear()}>
             Clear
           </button>
         </div>
