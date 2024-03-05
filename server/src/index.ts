@@ -7,6 +7,7 @@ import userRoutes from './routes/users'
 import authRoutes from './routes/auth'
 import myHotelRoutes from './routes/my-hotels'
 import hotelRoutes from './routes/hotels'
+import myBookingRoutes from './routes/my-bookings'
 import cookieParser from 'cookie-parser'
 import path from 'path'
 import { v2 as cloudinary} from 'cloudinary'
@@ -42,6 +43,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/my-hotels', myHotelRoutes);
 app.use('/api/hotels', hotelRoutes)
+app.use('/api/my-bookings', myBookingRoutes);
 
 //need to add this separately from static files because conditional logic for some pages like add hotel feature is not present in static files.
 app.get('*', (req : Request, res : Response) => {

@@ -1,5 +1,5 @@
 //fetch requests. separate file to keep code cleaner
-import {HotelSearchResponse, HotelType, PaymentIntentResponse} from '../../server/shared/types'
+import { HotelSearchResponse, HotelType, PaymentIntentResponse} from '../../server/shared/types'
 import { UserType } from '../../server/shared/types';
 import { BookingFormData } from './forms/BookingForm/BookingForm';
 import { LoginFormData } from './pages/Login'
@@ -157,6 +157,13 @@ export const searchHotels = async (searchParams : SearchParams) : Promise<HotelS
 
 }
 
+export const fetchHotelsHomePage = async () : Promise<HotelType[]>=> {
+    const response = await fetch(`${API_BASE_URL}/api/hotels/`);
+    if(!response.ok){
+        throw new Error("Error fetching hotels")
+    }
+    return response.json()
+}
 export const searchHotelById = async (hotelID : string) : Promise<HotelType> => {
     const response = await fetch(`${API_BASE_URL}/api/hotels/${hotelID}`);
 
@@ -214,4 +221,16 @@ export const createRoomBooking = async (formData : BookingFormData) => {
     }
 
     return;
+}
+
+export const fetchMyBookings = async () : Promise<HotelType[]> => {
+    const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
+        credentials : "include"
+    });
+
+    if(!response.ok){
+        throw new Error("Error fetching bookings");
+    }
+
+    return response.json()
 }
