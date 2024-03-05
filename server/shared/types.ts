@@ -43,3 +43,11 @@ export type BookingType = {
     checkOut : Date,
     totalCost : number,
 }
+
+export type UserType = {
+    _id : string,
+    email : string,
+    password : string,
+    fName : string,
+    lName : string
+  }
