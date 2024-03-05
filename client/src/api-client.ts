@@ -1,6 +1,6 @@
 //fetch requests. separate file to keep code cleaner
 import {HotelSearchResponse, HotelType, PaymentIntentResponse} from '../../server/shared/types'
-import { UserType } from '../../server/src/models/User';
+import { UserType } from '../../server/shared/types';
 import { BookingFormData } from './forms/BookingForm/BookingForm';
 import { LoginFormData } from './pages/Login'
 import { RegisterFormData } from './pages/Register'
