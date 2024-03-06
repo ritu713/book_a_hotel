@@ -48,7 +48,7 @@ app.use('/api/my-bookings', myBookingRoutes);
 //need to add this separately from static files because conditional logic for some pages like add hotel feature is not present in static files.
 app.get('*', (req : Request, res : Response) => {
     console.log(__dirname)
-    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+    res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
 })
 
 
